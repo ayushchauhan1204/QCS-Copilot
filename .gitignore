@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+
+# IDE
+.vscode/
+.idea/
+.antigravity/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local feedback database — deliberately excluded so a fresh clone (or a
+# fresh Streamlit Cloud deploy) always starts with an empty Trust Ledger,
+# never carries over someone's local test clicks. feedback_store.py
+# recreates this automatically on first run (self-healing init_db()).
+db/*.db
+
+# NOTE: outputs/ (generated dataset) and models/ (trained .pkl files) are
+# INTENTIONALLY NOT excluded here. Streamlit Cloud clones this repo fresh
+# with no pipeline step to regenerate them — they need to be committed so
+# the deployed app has data to load. Generation is fully seeded (seed=42),
+# so what's committed is reproducible from data/generate_data.py + src/train_model.py
+# at any time if you need to regenerate.
