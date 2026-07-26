@@ -17,6 +17,17 @@ CONSTITUTION RULES OBSERVED:
 
 from __future__ import annotations
 
+import os
+import sys
+
+# Streamlit Cloud runs this script with only its own directory (dashboard/) on
+# the import path, not the project root — so `from src.xxx import yyy` fails
+# there even though it works locally (where the project root happens to
+# already be on the path). This explicitly adds the project root (one level
+# up from this file) so `src` and `data` resolve identically in both
+# environments. Must run before any `from src...`/`from data...` import below.
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import logging
 import random
 import time
