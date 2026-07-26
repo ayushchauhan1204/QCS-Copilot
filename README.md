@@ -21,7 +21,7 @@ QCS Copilot is a co-pilot, not an autopilot — it watches every grade change al
 
 The pipeline is a fixed, linear build order — each stage is validated before the next depends on it. The one exception is Correlation Discovery, which runs in two passes: an early statistical pass (right after the data exists) and a later ML-validation pass (only after the Classifier/Regressor are trained).
 
-![QCS Copilot pipeline architecture](https://drive.google.com/file/d/1-qrb0Tp33KUVmKQ8Aa4jLdNUKKpvI4_E/view?usp=drive_link)
+![QCS Copilot pipeline architecture](assets/architecture.png)
 
 ### Module-by-module breakdown
 
